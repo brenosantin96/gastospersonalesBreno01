@@ -3,16 +3,16 @@ import {ItemType} from '../types/Item'
 export const items: ItemType[] = [
 
     {
-        date: new Date(2022, 8, 14),
+        date: new Date(2022, 9, 4),
         category: 'food',
         title: 'McDonalds',
         value: 32.12
     },
 
     {
-        date: new Date(2022, 8, 15),
+        date: new Date(2022, 9, 5),
         category: 'food',
-        title: 'Burguer King',
+        title: 'Burger King',
         value: 32.12
     },
 
@@ -24,7 +24,7 @@ export const items: ItemType[] = [
     },
 
     {
-        date: new Date(2022, 8, 14),
+        date: new Date(2022, 10, 14),
         category: 'salary',
         title: 'Sueldo',
         value: 2000

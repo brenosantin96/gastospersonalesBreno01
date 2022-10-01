@@ -1,0 +1,4 @@
+Criar um componente para inserir a informacao:
+
+Vamos enviar as 04 infromacoes, data, categoria, titulo, valor um botao de adicionar.
+
