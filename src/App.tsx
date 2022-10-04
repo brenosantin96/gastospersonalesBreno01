@@ -8,6 +8,7 @@ import { items } from './data/items'
 import { getCurrentMonth, filterListByMonth } from './utilities/dateFilter'
 import { TableArea } from './components/TableArea'
 import { InfoArea } from './components/InfoArea'
+import { FormArea } from './components/FormArea'
 
 function App() {
 
@@ -24,12 +25,12 @@ function App() {
   }, [list, currentMonth])
 
   //to get values from filteredMonth
-  useEffect(()=> {
+  useEffect(() => {
     let incomeCount = 0;
     let expenseCount = 0;
 
-    for (let i in filteredList){
-      if(categories[filteredList[i].category].expense){
+    for (let i in filteredList) {
+      if (categories[filteredList[i].category].expense) {
         expenseCount = expenseCount + filteredList[i].value;
       } else {
         incomeCount = incomeCount + filteredList[i].value;
@@ -41,8 +42,15 @@ function App() {
 
   }, [filteredList])
 
-  const handleMonthChange = (newMonth : string) => {
+  const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
+  }
+
+  const handleAddItem = (item: ItemType) => {
+
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
   }
 
   return (
@@ -58,7 +66,7 @@ function App() {
           expense={expense}
         />}
 
-        {/* área de inserção */}
+        {<FormArea onAdd={handleAddItem} />}
 
         <TableArea list={filteredList}></TableArea>
 
