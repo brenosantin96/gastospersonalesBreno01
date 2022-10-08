@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { ItemType } from '../types/Item';
 
 export const getCurrentMonth = () => {
@@ -40,5 +41,33 @@ export const formatCurrentMonth = (currentMonth: string): string => {
     let [year, month] = currentMonth.split('-');
     let months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     return `${months[parseInt(month) - 1]} ${year}`
+
+}
+
+export const handleChangeDateFactura = (e: ChangeEvent<HTMLDataElement>) => {
+
+    if (e.target.value.length >= 10) {
+
+        let valueDateInput = e.target.value;
+        let arrayDateYYMMDD = valueDateInput.split('-');
+
+
+        let day: string = arrayDateYYMMDD[2];
+        let month: string = arrayDateYYMMDD[1];
+        let year: string = arrayDateYYMMDD[0];
+
+
+
+        let numberDay: number = parseInt(day);
+        let numberMonth: number = parseInt(month) - 1;
+        let numberYear: number = parseInt(year);
+
+        let dateStarted = new Date(numberYear, numberMonth, numberDay, 0, 0, 0);
+        let dateToFormat = new Date(numberYear, numberMonth, numberDay, 0, 0, 0).toJSON();
+        let dateFormatted = dateToFormat.split("T");
+
+        return dateStarted;
+
+    }
 
 }
