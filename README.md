@@ -48,10 +48,9 @@ Look the port that is hosting the system in the cmd, then open the browser and t
 
 ### Images 
 
+Finished
 
-In construction
-
-![img text](https://github.com/brenosantin96/gastospersonalesBreno01/blob/main/src/assets/preview.png)
+![img text](https://github.com/brenosantin96/gastospersonalesBreno01/blob/main/sistemaFinanceiroGif.gif)
 
 
 
